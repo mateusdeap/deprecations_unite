@@ -9,9 +9,10 @@ defmodule DeprecationsUnite.MixProject do
       description: "A tool to merge deprecation lists in JSON format.",
       package: [
         name: "deprecations_unite",
-        license: ["MIT"],
+        licenses: ["MIT"],
         links: %{"GitHub" => "https://github.com/mateusdeap/deprecations_unite"}
       ],
+      source_url: "https://github.com/mateusdeap/deprecations_unite",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       escript: [main_module: DeprecationsUnite]

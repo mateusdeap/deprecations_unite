@@ -10,6 +10,7 @@ defmodule DeprecationsUnite.MixProject do
       package: [
         name: "deprecations_unite",
         license: ["MIT"],
+        links: %{"GitHub" => "https://github.com/mateusdeap/deprecations_unite"}
       ],
       start_permanent: Mix.env() == :prod,
       deps: deps()

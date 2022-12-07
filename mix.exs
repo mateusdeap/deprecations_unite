@@ -29,7 +29,8 @@ defmodule DeprecationsUnite.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:poison, "~> 5.0.0"}
+      {:poison, "~> 5.0.0"},
+      {:ex_doc, "~> 0.29.1"}
     ]
   end
 end

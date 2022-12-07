@@ -24,3 +24,6 @@ deprecations_unite-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+deprecations*.json
+deprecations_unite

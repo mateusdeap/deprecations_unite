@@ -13,7 +13,8 @@ defmodule DeprecationsUnite.MixProject do
         links: %{"GitHub" => "https://github.com/mateusdeap/deprecations_unite"}
       ],
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      escript: [main_module: DeprecationsUnite]
     ]
   end
 

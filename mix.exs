@@ -4,7 +4,7 @@ defmodule DeprecationsUnite.MixProject do
   def project do
     [
       app: :deprecations_unite,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.13",
       description: "A tool to merge deprecation lists in JSON format.",
       package: [

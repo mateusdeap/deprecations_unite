@@ -4,14 +4,17 @@ defmodule DeprecationsUnite do
   """
 
   def main(args) do
-    {valid_args, invalid_args, _} = args
-    |> OptionParser.parse(strict: [path: :string])
+    {valid_args, invalid_args, _} =
+      args
+      |> OptionParser.parse(strict: [path: :string])
 
     case invalid_args do
       [] ->
         file_names = Keyword.get(valid_args, :path) |> Path.wildcard()
         DeprecationsUnite.merge(file_names)
-      _ -> IO.puts "Invalid argument"
+
+      _ ->
+        IO.puts("Invalid argument")
     end
   end
 
@@ -31,11 +34,15 @@ defmodule DeprecationsUnite do
   This will generate a file named `deprecations.json` in your current working directory.
   """
   def merge([]), do: IO.puts("No files found")
+
   def merge(file_names) do
-    deprecations = Enum.map(file_names, fn path -> read_file(path) end)
-    |> Enum.map(fn json_string -> Poison.decode!(json_string) end)
-    |> Enum.reduce(fn deprecation_map, all_deprecations_map -> Map.merge(all_deprecations_map, deprecation_map) end)
-    |> Poison.encode!(pretty: true)
+    deprecations =
+      Enum.map(file_names, fn path -> read_file(path) end)
+      |> Enum.map(fn json_string -> Poison.decode!(json_string) end)
+      |> Enum.reduce(fn deprecation_map, all_deprecations_map ->
+        Map.merge(all_deprecations_map, deprecation_map)
+      end)
+      |> Poison.encode!(pretty: true)
 
     File.write("deprecations.json", deprecations)
   end

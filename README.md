@@ -19,16 +19,16 @@ mix archive.install hex deprecations_unite
 
 ## Usage
 
-There is only one way to use this program:
+This program adds a mix task called `deprecations.unite`. All you need to do is invoke it:
 
 ```bash
-$ deprecations_unite --path [PATH_TO_DEPRECATION_LISTS]
+$ mix deprecations.unite --path [PATH_TO_DEPRECATION_LISTS]
 ```
 
 The path should be a string literal and it will accept globbing. I guess that is the only way this works, currently:
 
 ```bash
-$ deprecations_unite --path "lib/deprecations*.json"
+$ mix deprecations.unite --path "lib/deprecations*.json"
 ```
 
 This will generate a file named `deprecations.json` in your current working directory.

@@ -14,21 +14,23 @@ You need to have Elixir 1.13 installed.
 This is a CLI program and is available in hex.pm. All you need to run is:
 
 ```bash
-mix archive.install hex deprecations_unite
+mix escript.install hex deprecations_unite
 ```
+### If you use asdf
+In case you use asdf to manage your installed elixir version, make sure to run `asdf reshim elixir` after installing this script.
 
 ## Usage
 
-This program adds a mix task called `deprecations.unite`. All you need to do is invoke it:
+Simply call `deprecations_unite` and give it the relative path to where your deprecation lists are:
 
 ```bash
-$ mix deprecations.unite --path [PATH_TO_DEPRECATION_LISTS]
+$ deprecations_unite --path [PATH_TO_DEPRECATION_LISTS]
 ```
 
 The path should be a string literal and it will accept globbing. I guess that is the only way this works, currently:
 
 ```bash
-$ mix deprecations.unite --path "lib/deprecations*.json"
+$ deprecations_unite --path "lib/deprecations*.json"
 ```
 
 This will generate a file named `deprecations.json` in your current working directory.
